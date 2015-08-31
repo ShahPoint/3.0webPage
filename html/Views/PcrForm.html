@@ -1,0 +1,145 @@
+﻿<div class="page-content-wrapper">
+
+    <button ng-click="change()">Change Tab</button>
+
+    <cloud-tab name="Some Tab" class="active">
+
+        <article class="col-xs-12 col-sm-6">
+
+            <cloud-widget class="col-xs-12" name="Transport Information">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="Complaint" />
+                        <br />
+                        <teddyinput name="BarrierstoPatientCare" />
+                    </article>
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="DurationofComplaint" />
+                        <br />
+                        <teddyinput name="TimeUnitsofDurationofComplaint" />
+                    </article>
+                </div>
+            </cloud-widget>
+
+            <cloud-widget class="col-xs-12" name="Report" color="yellow">
+                <pre>{{pcr | json}}</pre>
+            </cloud-widget>
+
+        </article>
+
+        <article class="col-xs-12 col-sm-6">
+            <cloud-widget class="col-xs-12" name="Transport Information">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="MassCasualtyIncident" />
+                        <br />
+                        <teddyinput name="NumberofPatientsatScene" />
+                        <br />
+                        <teddyinput name="HowPatientWasMovedtoAmbulance" />
+                        <br />
+                        <teddyinput name="PositionofPatientDuringTransport" />
+                    </article>
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="CardiacRhythmonArrivalatDestination" />
+                        <br />
+                        <teddyinput name="EmergencyDepartmentDisposition" />
+                        <br />
+                        <teddyinput name="HospitalDisposition" />
+                        <br />
+                        <teddyinput name="HowPatientWasTransportedFromAmbulance" />
+                        <br />
+                        <teddyinput name="TransportModefromScene" />
+                    </article>
+                </div>
+            </cloud-widget>
+        </article>
+
+    </cloud-tab>
+
+    <cloud-tab name="Some Other Tab">
+
+        <article class="col-xs-12 col-sm-6">
+
+            <cloud-widget class="col-xs-12" name="dAgency">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="EMSAgencyUniqueStateID" />
+                        <br />
+                        <teddyinput name="EMSAgencyNumber" />
+                    </article>
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="EMSAgencyName" />
+                        <br />
+                        <teddyinput name="EMSAgencyState" />
+                        <br />
+                        <teddyinput name="DispatchNotifiedDate/Time" />
+                    </article>
+                </div>
+            </cloud-widget>
+
+            <cloud-widget class="col-xs-12" name="Report" color="yellow">
+                <pre>{{pcr | json}}</pre>
+            </cloud-widget>
+
+        </article>
+
+        <article class="col-xs-12 col-sm-6">
+            <cloud-widget class="col-xs-12" name="dConfiguration">
+                <div class="row">
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="StateAssociatedwiththeCertification/LicensureLevels" />
+                        <br />
+                        <teddyinput name="StateCertification/LicensureLevels" />
+                        <br />
+                        <teddyinput name="ProceduresPermittedbytheState" />
+                        <br />
+                        <teddyinput name="MedicationsPermittedbytheState" />
+                    </article>
+                    <article class="col-xs-12 col-md-6">
+                        <teddyinput name="ProtocolsPermittedbytheState" />
+                        <br />
+                        <teddyinput name="EMSCertificationLevelsPermittedtoPerformEachProcedure" />
+                        <br />
+                        <teddyinput name="EMSAgencyProcedures" />
+                        <br />
+                        <teddyinput name="EMSCertificationLevelsPermittedtoAdministerEachMedication" />
+                        <br />
+                        <teddyinput name="EMSAgencyMedications" />
+                    </article>
+                </div>
+            </cloud-widget>
+        </article>
+
+    </cloud-tab>
+
+</div>
+
+<div class="modal fade" id="elementHelpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Help: {{helpData.ElementTitle}}</h4>
+            </div>
+            <div class="modal-body">
+                <h4><b>Nemsis Name (Code):</b> {{helpData.NemsisName}} ({{helpData.NemsisNumber}})</h4>
+                <br />
+                <h4><b>Definition:</b> {{helpData.Definition}}</h4>
+                <br />
+                <h4><b>Synonyms:</b></h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    cloud-tab {
+        display: none;
+    }
+    cloud-tab.active {
+        display: block;
+    }
+</style>

@@ -1,0 +1,11 @@
+﻿<section style="width: 100%">
+    <!--<i class="fa fa-question-circle" style="cursor: pointer;"></i>-->
+    <div style="margin-bottom: 5px">
+        <label ng-click="help(data)" style="display: inline; border-bottom: 1px dashed black; cursor: pointer;">
+            {{::data.ElementTitle}}
+        </label>
+    </div>
+    <div style="width: 100%;">
+        <input class="form-control" ng-model="pcr[data.ngModel]" placeholder="default value here" maxlength="{{::data.maxLength}}"/>
+    </div>
+</section>
